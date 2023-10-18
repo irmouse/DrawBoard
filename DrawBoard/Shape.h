@@ -43,8 +43,8 @@ public:
 	virtual bool isInside(int x, int y) = 0;
 	virtual void MoveBegin(int x, int y) = 0;
 	virtual void MoveEnd(int x, int y) = 0;
-	virtual bool ShapeToBuffer(char* buffer, int size) = 0;
-	virtual ShapeRep* ShapeToRep() = 0;
+	// virtual bool ShapeToBuffer(char* buffer, int size) = 0;
+	// virtual ShapeRep* ShapeToRep() = 0;
 	ShapeRep* ShapeToRep(ShapeType type, int point_num, POINT* points) {
 		ShapeRep* rep = (ShapeRep*)malloc(sizeof(ShapeRep) + sizeof(POINT) * (point_num - 1));
 		rep->pointNum = point_num;

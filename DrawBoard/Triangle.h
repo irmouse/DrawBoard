@@ -70,13 +70,6 @@ public:
 		return true;
 	}
 
-	ShapeRep* ShapeToRep() {
-		
-		rep->pointNum = pointNum();
-		rep->type = TRIANGLE;
-		
-	}
-
 	Shape* clone() {
 		return new Triangle(1);
 	}
