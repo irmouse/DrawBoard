@@ -30,6 +30,12 @@
     <ClCompile Include="Shape.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="FileAPI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UIwindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Shape.h">
@@ -42,6 +48,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="EllipseShape.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FileAPI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIwindow.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

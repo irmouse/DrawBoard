@@ -129,15 +129,19 @@
   <ItemGroup>
     <ClCompile Include="DrawBoard.cpp" />
     <ClCompile Include="EllipseShape.cpp" />
+    <ClCompile Include="FileAPI.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Triangle.cpp" />
+    <ClCompile Include="UIwindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EllipseShape.h" />
+    <ClInclude Include="FileAPI.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Triangle.h" />
+    <ClInclude Include="UIwindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

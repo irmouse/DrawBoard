@@ -46,6 +46,7 @@ void Shape::OnLButtonMove(int x, int y)
 {
     points[1].x = x;
     points[1].y = y;
+    changePoints();
 }
 
 void Shape::MoveBegin(int x, int y)
@@ -65,6 +66,7 @@ void Shape::MoveEnd(int x, int y)
     }
     ptMoveOrigin.x = x;
     ptMoveOrigin.y = y;
+    changePoints();
 }
 
 size_t Shape::BufferToShape(char *buffer, Shape *&sp)
