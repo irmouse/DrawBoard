@@ -11,18 +11,11 @@ enum ShapeType
 	NUM
 };
 
-typedef struct ShapeRep
-{
-	ShapeType type;
-	int pointNum;
-	POINT points[1]; // 假设长度为1，后面会添加
-} ShapeRep;
 
 class Shape
 {
 public:
 	Shape() {}
-	Shape(const POINT *points);
 
 	static Shape *CreateShape(ShapeType typeId);
 	static Shape *CreateShape(ShapeType typeId, POINT *points);
@@ -44,28 +37,20 @@ public:
 	virtual void Draw(HDC hdc) = 0;
 	virtual bool isInside(int x, int y) = 0;
 
+	// 返回一个shape占用buffer大小
+	int bufferSize()
+	{
+		return sizeof(POINT) * pointNum() + sizeof(ShapeType) + sizeof(int);
+	}
+
 protected:
 	virtual ShapeType returnType() = 0;
 	virtual Shape *clone() = 0;
 	virtual void changePoints() = 0;
-	int pointNum()
-	{
-		return 2;
-	}
 
 	static void addPrototype(Shape *shape, ShapeType type)
 	{
 		_prototypes[type] = shape;
-	}
-
-	POINT getFromPoint()
-	{
-		return points[0];
-	}
-
-	POINT getToPoint()
-	{
-		return points[1];
 	}
 
 	const POINT *getPoints()
@@ -74,9 +59,7 @@ protected:
 	}
 
 	static size_t _id;
-	// 两个顶点，ptFrom和ptTo
-	POINT points[2];
-	POINT ptMoveOrigin;
+	
 
 private:
 	// 从buffer中得到当前shape有几个point
@@ -88,11 +71,15 @@ private:
 		return num;
 	}
 
-	// 返回一个shape占用buffer大小
-	int bufferSize()
+	
+
+	int pointNum()
 	{
-		return sizeof(POINT) * pointNum() + sizeof(ShapeType) + sizeof(int);
+		return 2;
 	}
 
 	static Shape *_prototypes[SHAPE_TYPE_NUM];
+	// 两个顶点，ptFrom和ptTo
+	POINT points[2];
+	POINT ptMoveOrigin;
 };

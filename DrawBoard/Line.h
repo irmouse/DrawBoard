@@ -33,9 +33,7 @@ private:
 	{
 		addPrototype(this, LINE);
 	}
-
 	static Line _line;
-
 	POINT ptFrom;
 	POINT ptTo;
 };

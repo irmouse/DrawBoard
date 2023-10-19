@@ -3,14 +3,7 @@
 Shape *Shape::_prototypes[SHAPE_TYPE_NUM];
 size_t Shape::_id;
 
-Shape::Shape(const POINT *po)
-{
-    for (int i = 0; i < 2; i++)
-    {
-        points[i].x = po[i].x;
-        points[i].y = po[i].y;
-    }
-}
+
 
 Shape *Shape::CreateShape(ShapeType typeId)
 {
@@ -29,13 +22,12 @@ Shape *Shape::CreateShape(ShapeType typeId, POINT *points)
     if (typeId < ShapeType::NUM)
     {
         Shape *sp = _prototypes[typeId]->clone();
-        // sp->setPoints(points);
-        sp->changePoints();
         for (int i = 0; i < 2; i++)
         {
             sp->points[i].x = points[i].x;
             sp->points[i].y = points[i].y;
         }
+        sp->changePoints();
         return sp;
     }
     else

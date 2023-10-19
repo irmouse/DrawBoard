@@ -32,10 +32,6 @@ enum DrawMode
     MOVE
 };
 
-Line Line::_line;
-Triangle Triangle::_triangle;
-EllipseShape EllipseShape::_ellipse;
-
 BOOL fDraw = FALSE;
 POINT ptPrevious;
 POINT ptCurrent;
